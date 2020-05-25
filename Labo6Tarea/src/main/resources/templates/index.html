@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingresar contribuyente</title>
+</head>
+<body>
+<form method="post" th:action="@{/ingresar}" th:object="${contribuyente}">
+
+		<h1>Ingresar contribuyente </h1>
+		
+		<span th:errors="*{ccontribuyente}" style="color: #FD8884"></span>
+		<span th:errors="*{cimportancia}" style="color: #FD8884"></span>
+
+		<select th:field="*{c_importancia}">
+		    <option th:each="imp : ${importanciaSelect}"
+		    th:value="${imp.cimportancia}" 
+		    th:text="${imp.importancia}">
+		    </option>
+		</select>
+		<br>
+		<span th:errors="*{ccontribuyente}" style="color: #FD8884"></span>
+		<span th:errors="*{cimportancia}" style="color: #FD8884"></span>
+		
+		<input type="text" th:field="*{nombre}" placeholder="Nombre de contribuyente">
+		<br>
+		<span th:errors="*{Nombre}" style="color: #FD8884"></span>
+		
+		<input type="text"th:field="*{apellido}" placeholder="apellido de contribuyente">
+		<br>
+		<span th:errors="*{Apellido}" style="color: #FD8884"></span>
+		
+		<input type="text" th:field="*{nit}" placeholder="NIT">
+		<br>
+		<span th:errors="*{nit}" style="color: #FD8884"></span>
+		
+		<input type="submit" value="Guardar" >
+		
+		<a href="/mostrarContribuyentes">Ver contribuyentes</a>
+	</form>
+</body>
+</html>

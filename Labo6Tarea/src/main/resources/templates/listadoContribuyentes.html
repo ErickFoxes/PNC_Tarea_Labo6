@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ver contribuyente</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>NIT</th>
+			<th>Importancia</th>
+			<th>Fecha de Ingreso</th>
+		</thead>
+		<th:block th:each="contribuyente, row:${contribuyentes}">
+			<tr>
+				<th th:text="${contribuyente.nombre}">
+				<th th:text="${contribuyente.apellido}">
+				<th th:text="${contribuyente.nit}">
+			</tr>
+		</th:block>
+	</table>
+</body>
+</html>
